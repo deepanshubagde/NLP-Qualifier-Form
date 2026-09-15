@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import defaultBannerImg from '../assets/header-banner.png';
 
 interface HeaderBannerProps {
   bannerUrl?: string;
 }
 
 const STORAGE_KEY = 'monkhood_custom_banner';
-const DEFAULT_BANNER = '/header-banner.png?v=3';
 
 export const HeaderBanner: React.FC<HeaderBannerProps> = ({
-  bannerUrl = DEFAULT_BANNER,
+  bannerUrl = defaultBannerImg,
 }) => {
   const [currentImage, setCurrentImage] = useState<string>(bannerUrl);
 
   useEffect(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved && (saved.startsWith('data:image/') || saved.startsWith('http') || saved.startsWith('/'))) {
+      if (saved && (saved.startsWith('data:image/') || saved.startsWith('http'))) {
         setCurrentImage(saved);
       } else {
         setCurrentImage(bannerUrl);
