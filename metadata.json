@@ -1,0 +1,6 @@
+{
+  "name": "Advanced NLP Coaching Qualification Form",
+  "description": "A Paperform-inspired single-page qualification web form for Deepanshu Bagde's Advanced NLP Coaching Program with auto-save and Google Sheets integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

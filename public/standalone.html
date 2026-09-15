@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qualifier — Mind Reprograming</title>
+  <meta name="description" content="Application and qualification for Deepanshu Bagde's Advanced NLP Coaching Program.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              gold: '#E5A93C',
+              dark: '#141416',
+              surface: '#FBFBFA',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #F8F7F4;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #1F2328;
+    }
+    .paper-shadow {
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: #D97706;
+      box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.12);
+    }
+  </style>
+</head>
+<body class="min-h-screen py-4 sm:py-12 px-2.5 sm:px-6 flex flex-col items-center">
+  <div class="w-full max-w-3xl">
+    
+    <!-- Paperform Card Container -->
+    <div class="bg-white rounded-2xl paper-shadow border border-stone-200/80 overflow-hidden">
+      
+      <!-- Top Banner Image -->
+      <div id="standalone-banner-wrap" class="w-full bg-black relative overflow-hidden">
+        <img id="standalone-banner-img" src="header-banner.png" alt="Master Your Mind To Master Your Life - Deepanshu Bagde" class="w-full h-auto object-cover block" onerror="this.onerror=null; this.src='https://docs.google.com/forms-images-rt/ANbbkiiE2w-azyTpuJKx_2FS7XRHf_M7tPwC_vLunDpqVeeUCzAT0dCJoaqG6Vc1zi5baUHsEFox_ou7Ae0q097BQzCYP1tu8VY0U1HdIHZDGw49ovEWPL540DGTq-s5KFp2ww8I9JPUxDCqkmsyrOtuV4bEHW4yX_2JSyjMTeDdshHeq0n_iuhUyoZ4w7qKuFsbsy7nXsGzGNisG2EEB2z5Tq_wchtx2SghHGdITzo=w1795';" />
+      </div>
+
+      <!-- Welcome & Title Section -->
+      <div class="px-4 sm:px-12 pt-6 sm:pt-10 pb-5 sm:pb-8 border-b border-stone-100">
+        <div class="inline-flex max-w-full items-center gap-1.5 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-lg sm:rounded-full bg-amber-50 border border-amber-300 text-amber-950 text-[10.5px] min-[360px]:text-[11.5px] min-[400px]:text-xs sm:text-sm font-semibold tracking-tight whitespace-nowrap mb-3 sm:mb-4 shadow-xs">
+          <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse shrink-0"></span>
+          <span class="truncate">Your Outer World is Reflection of Your Internal World</span>
+        </div>
+        <h1 class="font-display text-xl sm:text-3xl font-bold text-stone-900 tracking-tight leading-snug">
+          Qualifier — Mind Reprograming
+        </h1>
+      </div>
+
+      <!-- Main Form -->
+      <form id="qualifierForm" class="px-4 sm:px-12 py-6 sm:py-8 space-y-7 sm:space-y-9" novalidate>
+        
+        <!-- Participant Details -->
+        <div class="space-y-6">
+          <div>
+            <label class="block text-sm font-semibold text-stone-800 mb-1.5" for="name">
+              Full Name <span class="text-amber-600">*</span>
+            </label>
+            <input type="text" id="name" name="name" required placeholder="e.g. Rahul Sharma"
+              class="w-full px-4 py-3 rounded-xl border border-stone-200 bg-stone-50/50 text-stone-900 placeholder-stone-400 text-sm transition" />
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold text-stone-800 mb-2">
+              Gender <span class="text-amber-600">*</span>
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+              <label class="flex items-center justify-between text-left p-3.5 rounded-xl border border-stone-200/90 bg-stone-50/40 hover:bg-stone-50 cursor-pointer text-sm font-semibold text-stone-800 has-[:checked]:border-amber-500 has-[:checked]:bg-amber-50/70 has-[:checked]:text-amber-900 transition select-none">
+                <span>Male</span>
+                <input type="radio" name="gender" value="Male" required class="w-4 h-4 accent-amber-600 cursor-pointer shrink-0" />
+              </label>
+              <label class="flex items-center justify-between text-left p-3.5 rounded-xl border border-stone-200/90 bg-stone-50/40 hover:bg-stone-50 cursor-pointer text-sm font-semibold text-stone-800 has-[:checked]:border-amber-500 has-[:checked]:bg-amber-50/70 has-[:checked]:text-amber-900 transition select-none">
+                <span>Female</span>
+                <input type="radio" name="gender" value="Female" required class="w-4 h-4 accent-amber-600 cursor-pointer shrink-0" />
+              </label>
+              <label class="flex items-center justify-between text-left p-3.5 rounded-xl border border-stone-200/90 bg-stone-50/40 hover:bg-stone-50 cursor-pointer text-sm font-semibold text-stone-800 has-[:checked]:border-amber-500 has-[:checked]:bg-amber-50/70 has-[:checked]:text-amber-900 transition select-none">
+                <span>Prefer not to say</span>
+                <input type="radio" name="gender" value="Prefer not to say" required class="w-4 h-4 accent-amber-600 cursor-pointer shrink-0" />
+              </label>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-semibold text-stone-800 mb-1.5" for="age">
+                Age <span class="text-amber-600">*</span>
+              </label>
+              <input type="number" id="age" name="age" min="14" max="100" required placeholder="e.g. 28"
+                class="w-full px-4 py-3 rounded-xl border border-stone-200 bg-stone-50/50 text-stone-900 text-sm transition" />
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold text-stone-800 mb-1.5" for="city">
+                City / Location <span class="text-amber-600">*</span>
+              </label>
+              <input type="text" id="city" name="city" required placeholder="e.g. Mumbai, Delhi"
+                class="w-full px-4 py-3 rounded-xl border border-stone-200 bg-stone-50/50 text-stone-900 text-sm transition" />
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-stone-100" />
+
+        <!-- Questions 1 & 2 -->
+        <div class="space-y-6">
+          <div>
+            <label class="block text-sm font-semibold text-stone-800 mb-3 sm:mb-3.5">
+              1. Which of the Following Describes you the Best? <span class="text-amber-600">*</span>
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4" id="occupation-group">
+              <!-- Options injected via JS or styled radio cards -->
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold text-stone-800 mb-1">
+              2. Which of the Following Areas you are Struggling? <span class="text-amber-600">*</span>
+            </label>
+            <p class="text-xs text-stone-500 mb-3 sm:mb-3.5">Select all that apply</p>
+            <div class="flex flex-wrap gap-3 sm:gap-3.5" id="struggling-group">
+              <!-- Options injected via JS -->
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-stone-100" />
+
+        <!-- Questions 3 to 6 -->
+        <div class="space-y-6">
+          <!-- Q3 -->
+          <div class="p-4 rounded-xl bg-stone-50/70 border border-stone-200/70">
+            <p class="text-sm font-medium text-stone-800 mb-3">
+              3. Are you working hard to achieve success and health, yet experiencing patterns of failure, frustration, depression, anxiety, stress, lack of money and diseases? <span class="text-amber-600">*</span>
+            </p>
+            <div class="flex gap-4">
+              <label class="flex-1 flex items-center justify-center p-3 rounded-lg border border-stone-200 bg-white cursor-pointer hover:border-amber-500 has-[:checked]:border-amber-600 has-[:checked]:bg-amber-50 font-medium text-sm transition">
+                <input type="radio" name="patternsOfFailure" value="Yes" required class="hidden" /> Yes
+              </label>
+              <label class="flex-1 flex items-center justify-center p-3 rounded-lg border border-stone-200 bg-white cursor-pointer hover:border-amber-500 has-[:checked]:border-amber-600 has-[:checked]:bg-amber-50 font-medium text-sm transition">
+                <input type="radio" name="patternsOfFailure" value="No" required class="hidden" /> No
+              </label>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="p-4 rounded-xl bg-stone-50/70 border border-stone-200/70">
+            <p class="text-sm font-medium text-stone-800 mb-3">
+              4. Have you attended Deepanshu Sir’s Event earlier? <span class="text-amber-600">*</span>
+            </p>
+            <div class="flex gap-4">
+              <label class="flex-1 flex items-center justify-center p-3 rounded-lg border border-stone-200 bg-white cursor-pointer hover:border-amber-500 has-[:checked]:border-amber-600 has-[:checked]:bg-amber-50 font-medium text-sm transition">
+                <input type="radio" name="attendedDeepanshuEvent" value="Yes" required class="hidden" /> Yes
+              </label>
+              <label class="flex-1 flex items-center justify-center p-3 rounded-lg border border-stone-200 bg-white cursor-pointer hover:border-amber-500 has-[:checked]:border-amber-600 has-[:checked]:bg-amber-50 font-medium text-sm transition">
+                <input type="radio" name="attendedDeepanshuEvent" value="No" required class="hidden" /> No
+              </label>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="p-4 rounded-xl bg-stone-50/70 border border-stone-200/70">
+            <p class="text-sm font-medium text-stone-800 mb-3">
+              5. Do you feel brain fog, tired and lack of motivation, drive, energy and purpose? <span class="text-amber-600">*</span>
+            </p>
+            <div class="flex gap-4">
+              <label class="flex-1 flex items-center justify-center p-3 rounded-lg border border-stone-200 bg-white cursor-pointer hover:border-amber-500 has-[:checked]:border-amber-600 has-[:checked]:bg-amber-50 font-medium text-sm transition">
+                <input type="radio" name="brainFogTired" value="Yes" required class="hidden" /> Yes
+              </label>
+              <label class="flex-1 flex items-center justify-center p-3 rounded-lg border border-stone-200 bg-white cursor-pointer hover:border-amber-500 has-[:checked]:border-amber-600 has-[:checked]:bg-amber-50 font-medium text-sm transition">
+                <input type="radio" name="brainFogTired" value="No" required class="hidden" /> No
+              </label>
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="p-4 rounded-xl bg-stone-50/70 border border-stone-200/70">
+            <p class="text-sm font-medium text-stone-800 mb-3">
+              6. You know you have more in you and you are capable of achieving it but it’s not happening and you don’t know what is stopping you? <span class="text-amber-600">*</span>
+            </p>
+            <div class="flex gap-4">
+              <label class="flex-1 flex items-center justify-center p-3 rounded-lg border border-stone-200 bg-white cursor-pointer hover:border-amber-500 has-[:checked]:border-amber-600 has-[:checked]:bg-amber-50 font-medium text-sm transition">
+                <input type="radio" name="capableMoreNotHappening" value="Yes" required class="hidden" /> Yes
+              </label>
+              <label class="flex-1 flex items-center justify-center p-3 rounded-lg border border-stone-200 bg-white cursor-pointer hover:border-amber-500 has-[:checked]:border-amber-600 has-[:checked]:bg-amber-50 font-medium text-sm transition">
+                <input type="radio" name="capableMoreNotHappening" value="No" required class="hidden" /> No
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-stone-100" />
+
+        <!-- Questions 7 to 9 -->
+        <div class="space-y-6">
+          <!-- Q7 & Q8 -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-4 rounded-xl bg-stone-50/70 border border-stone-200/70">
+              <p class="text-sm font-medium text-stone-800 mb-3">7. Have you ever heard of NLP? <span class="text-amber-600">*</span></p>
+              <div class="flex gap-3">
+                <label class="flex-1 flex items-center justify-center p-2.5 rounded-lg border border-stone-200 bg-white cursor-pointer has-[:checked]:border-amber-600 has-[:checked]:bg-amber-50 text-sm font-medium">
+                  <input type="radio" name="heardOfNLP" value="Yes" required class="hidden" /> Yes
+                </label>
+                <label class="flex-1 flex items-center justify-center p-2.5 rounded-lg border border-stone-200 bg-white cursor-pointer has-[:checked]:border-amber-600 has-[:checked]:bg-amber-50 text-sm font-medium">
+                  <input type="radio" name="heardOfNLP" value="No" required class="hidden" /> No
+                </label>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-stone-50/70 border border-stone-200/70">
+              <p class="text-sm font-medium text-stone-800 mb-3">8. Attended NLP workshop earlier? <span class="text-amber-600">*</span></p>
+              <div class="flex gap-3">
+                <label class="flex-1 flex items-center justify-center p-2.5 rounded-lg border border-stone-200 bg-white cursor-pointer has-[:checked]:border-amber-600 has-[:checked]:bg-amber-50 text-sm font-medium">
+                  <input type="radio" name="attendedNLPWorkshop" value="Yes" required class="hidden" /> Yes
+                </label>
+                <label class="flex-1 flex items-center justify-center p-2.5 rounded-lg border border-stone-200 bg-white cursor-pointer has-[:checked]:border-amber-600 has-[:checked]:bg-amber-50 text-sm font-medium">
+                  <input type="radio" name="attendedNLPWorkshop" value="No" required class="hidden" /> No
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q9 -->
+          <div>
+            <label class="block text-sm font-semibold text-stone-800 mb-3 sm:mb-3.5">
+              9. What is the major obstacle stopping you from achieving your Dream life? <span class="text-amber-600">*</span>
+            </label>
+            <div class="space-y-3.5" id="obstacle-group">
+              <!-- Obstacle radio list -->
+            </div>
+            <div id="obstacle-other-wrapper" class="mt-3 hidden">
+              <input type="text" id="majorObstacleOther" placeholder="Please describe your specific obstacle..."
+                class="w-full px-4 py-2.5 rounded-xl border border-stone-200 bg-white text-sm" />
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-stone-100" />
+
+        <!-- Question 10 -->
+        <div class="space-y-6">
+          <div>
+            <label class="block text-sm font-semibold text-stone-800 mb-3 sm:mb-3.5">
+              10. If you get an exact blueprint and system to achieve your health, business, income, and relationship goal, how much will you be willing to invest in yourself? <span class="text-amber-600">*</span>
+            </label>
+            <div class="space-y-3.5" id="investment-group">
+              <!-- Investment options -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="pt-4">
+          <button type="submit" id="submitBtn"
+            class="relative overflow-hidden group w-full py-4.5 px-8 bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 hover:from-amber-600 hover:via-amber-700 hover:to-amber-800 text-white font-bold rounded-2xl text-base sm:text-lg border-t border-amber-300/40 shadow-xl shadow-amber-600/30 hover:shadow-2xl hover:shadow-amber-600/45 transition duration-200 flex items-center justify-center cursor-pointer">
+            <span class="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/25 to-transparent pointer-events-none rounded-t-2xl"></span>
+            <span class="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none"></span>
+            <span class="relative z-10 font-bold tracking-wide">Submit</span>
+          </button>
+
+          <!-- 100% Secure Trust Line -->
+          <div class="mt-3 flex items-center justify-center gap-1.5 text-xs font-semibold text-emerald-600 select-none tracking-tight">
+            <svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            <span>100% Secure — Your Data is Safe With Us</span>
+          </div>
+        </div>
+
+      </form>
+
+      <!-- Thank You State (Hidden by default) -->
+      <div id="thankYouState" class="hidden px-5 sm:px-12 py-10 sm:py-14 text-center space-y-6">
+        <div class="w-16 h-16 sm:w-20 sm:h-20 bg-emerald-50 border-2 border-emerald-300/80 rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto shadow-sm text-emerald-600">
+          <svg class="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+        </div>
+        
+        <div class="space-y-2.5 max-w-xl mx-auto">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold">
+            <svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            <span>Form Submitted Successfully</span>
+          </div>
+          <h2 class="font-display text-2xl sm:text-3xl font-bold text-stone-900">
+            Thank you, <span id="thankYouName" class="text-amber-700 font-bold">Friend</span>.
+          </h2>
+          <p class="text-stone-600 text-sm sm:text-base leading-relaxed max-w-lg mx-auto">
+            Your form submission has been completely done. Thank you so very much for your patience and your time.
+          </p>
+        </div>
+
+        <div class="max-w-xl mx-auto bg-stone-50/90 rounded-2xl border border-stone-200/80 p-5 sm:p-6 text-left space-y-4 shadow-xs">
+          <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-100/70 border border-amber-200/70 px-3 py-1.5 rounded-lg w-fit">
+            <span>Important Next Step</span>
+          </div>
+          <div class="space-y-3 pt-1 text-xs sm:text-sm text-stone-700">
+            <div class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-amber-500 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5 shadow-xs">1</span>
+              <p class="leading-relaxed">
+                Let's meet live today <strong class="text-stone-900">9:00 PM IST</strong> for our <span class="font-semibold text-amber-950">The Ultimate Confidence Mastery</span> class. See you live!
+              </p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-amber-100 text-amber-900 text-xs font-bold flex items-center justify-center shrink-0 mt-0.5 border border-amber-300">2</span>
+              <p class="leading-relaxed">
+                <strong class="text-stone-900">Note:</strong> This session is <span class="font-semibold text-rose-700 underline underline-offset-2">live only</span>. No recording will be provided.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-2 flex items-center justify-center">
+          <button onclick="window.location.reload()" class="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-white hover:bg-stone-50 text-stone-600 hover:text-stone-900 border border-stone-300 text-xs font-medium transition cursor-pointer shadow-xs">
+            ← Submit another response
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Subdomain Footer -->
+    <div class="text-center mt-8 space-y-2 pb-8">
+      <p class="text-xs sm:text-sm text-stone-500 font-medium">
+        © Monkhood. All Rights Reserved. Private &amp; Confidential.
+      </p>
+      <p class="text-base sm:text-lg lg:text-xl font-semibold text-stone-800 tracking-tight font-display">
+        Digital Sangha, which aims to inspire transformation from within.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Configuration
+    const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwTax-EfrmgPkkUDrQOm3xaV6skGjX--jiLLxnKVSmsi3IqdSjd0_ZtLXsAmK8Pp_E6/exec";
+    const STORAGE_KEY = "monkhood_nlp_form_draft";
+
+    const OCCUPATIONS = [
+      "Business / Entrepreneur",
+      "Self-Employed / Freelancer",
+      "Job",
+      "Trainer / Speaker / Coach / Author",
+      "Housewife",
+      "Student"
+    ];
+
+    const STRUGGLING_AREAS = [
+      "Money & Finance",
+      "Business",
+      "Career",
+      "Health",
+      "Relationship",
+      "Self Growth",
+      "Energy & Passion"
+    ];
+
+    const OBSTACLES = [
+      "Lack of Support",
+      "Lack of Health & Energy",
+      "Lack of Skill & Knowledge",
+      "Lack of Right Mindset",
+      "Lack of Strategy & Plan",
+      "Other"
+    ];
+
+    const INVESTMENTS = [
+      "A) ₹5k to ₹10k",
+      "B) ₹15k to ₹25k",
+      "C) ₹25k to ₹45k",
+      "D) Ready To Invest Any Amount, If I Get A Result",
+      "E) No I can't Invest"
+    ];
+
+    // Render Options
+    function initOptions() {
+      const occContainer = document.getElementById("occupation-group");
+      occContainer.innerHTML = OCCUPATIONS.map(occ => `
+        <label class="flex items-center p-3 rounded-xl border border-stone-200 bg-stone-50/40 hover:bg-stone-50 cursor-pointer has-[:checked]:border-amber-600 has-[:checked]:bg-amber-50/70 text-sm font-medium transition">
+          <input type="radio" name="occupation" value="${occ}" required class="w-4 h-4 text-amber-600 border-stone-300 focus:ring-amber-500 mr-2.5" />
+          <span>${occ}</span>
+        </label>
+      `).join("");
+
+      const strContainer = document.getElementById("struggling-group");
+      strContainer.innerHTML = STRUGGLING_AREAS.map(area => `
+        <label class="inline-flex items-center px-3.5 py-2 rounded-xl border border-stone-200 bg-stone-50/50 hover:bg-stone-100 cursor-pointer has-[:checked]:border-amber-600 has-[:checked]:bg-amber-100/70 text-sm font-medium transition">
+          <input type="checkbox" name="strugglingAreas" value="${area}" class="hidden" />
+          <span>${area}</span>
+        </label>
+      `).join("");
+
+      const obsContainer = document.getElementById("obstacle-group");
+      obsContainer.innerHTML = OBSTACLES.map(obs => `
+        <label class="flex items-center p-3 rounded-xl border border-stone-200 bg-stone-50/40 hover:bg-stone-50 cursor-pointer has-[:checked]:border-amber-600 has-[:checked]:bg-amber-50/70 text-sm font-medium transition">
+          <input type="radio" name="majorObstacle" value="${obs}" required class="w-4 h-4 text-amber-600 border-stone-300 mr-2.5" />
+          <span>${obs === 'Other' ? 'Other (Please specify below)' : obs}</span>
+        </label>
+      `).join("");
+
+      const invContainer = document.getElementById("investment-group");
+      invContainer.innerHTML = INVESTMENTS.map(inv => `
+        <label class="flex items-center p-3.5 rounded-xl border border-stone-200 bg-stone-50/40 hover:bg-stone-50 cursor-pointer has-[:checked]:border-amber-600 has-[:checked]:bg-amber-50/70 text-sm font-medium transition">
+          <input type="radio" name="investmentCapacity" value="${inv}" required class="w-4 h-4 text-amber-600 border-stone-300 mr-2.5" />
+          <span>${inv}</span>
+        </label>
+      `).join("");
+    }
+
+    initOptions();
+
+    // Handle "Other" obstacle toggle
+    document.querySelectorAll('input[name="majorObstacle"]').forEach(el => {
+      el.addEventListener('change', (e) => {
+        const otherWrap = document.getElementById('obstacle-other-wrapper');
+        if (e.target.value === 'Other') {
+          otherWrap.classList.remove('hidden');
+          document.getElementById('majorObstacleOther').focus();
+        } else {
+          otherWrap.classList.add('hidden');
+        }
+      });
+    });
+
+    // Auto-Save and Restore
+    function saveDraft() {
+      const formData = new FormData(document.getElementById('qualifierForm'));
+      const data = {};
+      data.strugglingAreas = [];
+      formData.forEach((value, key) => {
+        if (key === 'strugglingAreas') {
+          data.strugglingAreas.push(value);
+        } else {
+          data[key] = value;
+        }
+      });
+      data.majorObstacleOther = document.getElementById('majorObstacleOther').value;
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    }
+
+    function restoreDraft() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (!saved) return;
+      try {
+        const data = JSON.parse(saved);
+        Object.keys(data).forEach(key => {
+          if (key === 'strugglingAreas' && Array.isArray(data[key])) {
+            data[key].forEach(val => {
+              const chk = document.querySelector(`input[name="strugglingAreas"][value="${val}"]`);
+              if (chk) chk.checked = true;
+            });
+          } else if (['occupation', 'patternsOfFailure', 'attendedDeepanshuEvent', 'brainFogTired', 'capableMoreNotHappening', 'heardOfNLP', 'attendedNLPWorkshop', 'majorObstacle', 'investmentCapacity'].includes(key)) {
+            const radio = document.querySelector(`input[name="${key}"][value="${data[key]}"]`);
+            if (radio) {
+              radio.checked = true;
+              if (key === 'majorObstacle' && data[key] === 'Other') {
+                document.getElementById('obstacle-other-wrapper').classList.remove('hidden');
+              }
+            }
+          } else {
+            const input = document.getElementById(key);
+            if (input) input.value = data[key];
+          }
+        });
+        if (data.majorObstacleOther) {
+          document.getElementById('majorObstacleOther').value = data.majorObstacleOther;
+        }
+      } catch (e) {
+        console.warn("Draft restore failed", e);
+      }
+    }
+
+    restoreDraft();
+
+    document.getElementById('qualifierForm').addEventListener('input', saveDraft);
+    document.getElementById('qualifierForm').addEventListener('change', saveDraft);
+
+    // Submission Handler
+    document.getElementById('qualifierForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="animate-spin mr-2">⏳</span> Submitting...';
+
+      const formData = new FormData(form);
+      const raw = {};
+      raw.strugglingAreas = [];
+      formData.forEach((val, key) => {
+        if (key === 'strugglingAreas') raw.strugglingAreas.push(val);
+        else raw[key] = val;
+      });
+      const obstacleOther = document.getElementById('majorObstacleOther').value;
+
+      // Exact 15 columns matching Google Apps Script (code.gs)
+      const payload = {
+        name: raw.name || '',
+        gender: raw.gender || '',
+        age: raw.age || '',
+        city: raw.city || '',
+        whatsapp: raw.whatsapp || '',
+        email: raw.email || '',
+        q1: raw.occupation || '',
+        q2: (raw.strugglingAreas || []).join(', '),
+        q3: raw.patternsOfFailure || '',
+        q4: raw.attendedDeepanshuEvent || '',
+        q5: raw.brainFogTired || '',
+        q6: raw.capableMoreNotHappening || '',
+        q7: raw.heardOfNLP || '',
+        q8: raw.attendedNLPWorkshop || '',
+        q9: raw.majorObstacle === 'Other' && obstacleOther ? 'Other: ' + obstacleOther : (raw.majorObstacle || ''),
+        q10: raw.investmentCapacity || '',
+        submittedAt: new Date().toISOString()
+      };
+
+      try {
+        if (WEBHOOK_URL && WEBHOOK_URL !== "YOUR_WEBHOOK_URL_HERE") {
+          // Send to Google Apps Script Webhook with responsive non-blocking dispatch
+          const netPromise = fetch(WEBHOOK_URL, {
+            method: 'POST',
+            mode: 'no-cors', // standard for Google Apps Script redirects
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          }).catch(e => console.warn('Webhook dispatch:', e));
+
+          await Promise.race([
+            netPromise,
+            new Promise(resolve => setTimeout(resolve, 250))
+          ]);
+        }
+        
+        // Clear saved draft on success
+        localStorage.removeItem(STORAGE_KEY);
+
+        // Show Thank you state
+        document.getElementById('qualifierForm').classList.add('hidden');
+        document.getElementById('thankYouName').textContent = payload.name || 'Friend';
+        document.getElementById('thankYouState').classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      } catch (err) {
+        alert("An error occurred while submitting. Please verify your connection or try again.");
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Submit Qualification Application';
+      }
+    });
+
+    // Custom Banner Loading (if previously saved)
+    const savedCustomBanner = localStorage.getItem('monkhood_custom_banner');
+    if (savedCustomBanner) {
+      document.getElementById('standalone-banner-img').src = savedCustomBanner;
+    }
+  </script>
+</body>
+</html>
