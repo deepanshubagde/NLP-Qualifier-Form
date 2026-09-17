@@ -50,10 +50,10 @@ export const YesNoToggle: React.FC<YesNoToggleProps> = ({
               type="button"
               id={`${id}-${opt.toLowerCase()}-btn`}
               onClick={() => onChange(opt)}
-              className={`flex items-center justify-center gap-2 py-3 px-4 rounded-xl border text-sm font-semibold transition-all duration-150 cursor-pointer select-none ${
+              className={`flex items-center justify-center gap-2 min-h-[48px] py-3.5 px-4 rounded-xl border text-sm sm:text-base font-semibold transition-colors duration-100 cursor-pointer select-none touch-manipulation active:scale-[0.96] ${
                 isSelected
                   ? 'bg-amber-600 border-amber-600 text-white shadow-sm shadow-amber-600/25 ring-2 ring-amber-500/20'
-                  : 'bg-white border-stone-200 text-stone-700 hover:border-stone-300 hover:bg-stone-50'
+                  : 'bg-white border-stone-200 text-stone-700 hover:border-stone-300 active:bg-amber-50/50'
               }`}
             >
               {isSelected && <Check className="w-4 h-4 stroke-[2.5]" />}

@@ -40,4 +40,12 @@ function doOptions(e) {
   return ContentService.createTextOutput("")
     .setMimeType(ContentService.MimeType.TEXT);
 }
+
+// Optional GET handler so visiting the URL shows an active status check
+function doGet(e) {
+  return ContentService.createTextOutput(JSON.stringify({
+    "status": "active",
+    "message": "Monkhood Qualifier Webhook is running successfully."
+  })).setMimeType(ContentService.MimeType.JSON);
+}
 `;

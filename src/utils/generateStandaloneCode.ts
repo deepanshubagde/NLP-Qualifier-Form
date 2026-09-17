@@ -52,9 +52,61 @@ export function generateStandaloneHTML(webhookUrl: string): string {
     <!-- Paperform Card Container -->
     <div class="bg-white rounded-2xl paper-shadow border border-stone-200/80 overflow-hidden">
       
-      <!-- Top Banner Image -->
-      <div id="standalone-banner-wrap" class="w-full bg-black relative overflow-hidden">
-        <img id="standalone-banner-img" src="/header-banner.png" alt="Master Your Mind To Master Your Life - Deepanshu Bagde" class="w-full h-auto object-cover block" />
+      <!-- Top Header Banner -->
+      <div class="w-full bg-black relative overflow-hidden border-b border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 py-6 sm:py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="relative flex items-center justify-center shrink-0">
+            <div class="absolute top-2 left-2 z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full border-2 border-amber-400 bg-black flex items-center justify-center shadow-lg">
+              <span class="text-amber-400 font-serif font-bold text-sm sm:text-base tracking-wider">DB</span>
+            </div>
+            <div class="relative w-40 h-40 sm:w-52 sm:h-52 rounded-full overflow-hidden bg-black flex items-center justify-center">
+              <svg class="w-full h-full object-cover transform scale-125 translate-y-4" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M35 195 C35 150 70 135 100 135 C130 135 165 150 165 195 Z" fill="#18181b" />
+                <path d="M45 195 C45 155 75 140 100 140 C125 140 155 155 155 195 Z" fill="#09090b" />
+                <path d="M75 140 L100 170 L125 140 L135 195 L65 195 Z" fill="#ffffff" />
+                <path d="M82 140 L100 162 L118 140 Z" fill="#f4f4f5" />
+                <path d="M35 195 L75 140 L88 195 Z" fill="#18181b" />
+                <path d="M165 195 L125 140 L112 195 Z" fill="#18181b" />
+                <circle cx="100" cy="95" r="32" fill="#f4ceb0" />
+                <circle cx="68" cy="95" r="4.5" fill="#f0c39f" />
+                <circle cx="132" cy="95" r="4.5" fill="#f0c39f" />
+                <path d="M65 85 C63 48 83 36 100 36 C117 36 137 48 135 85 C133 94 127 88 127 78 C127 60 112 45 100 45 C88 45 73 60 73 78 C73 88 67 94 65 85 Z" fill="#18110e" />
+                <path d="M65 78 C70 56 85 43 100 42 C115 43 130 56 135 78 C138 65 125 40 100 39 C75 40 62 65 65 78 Z" fill="#110c0a" />
+                <path d="M81 78 Q88 74 95 79" stroke="#18110e" stroke-width="2.5" stroke-linecap="round" />
+                <path d="M105 79 Q112 74 119 78" stroke="#18110e" stroke-width="2.5" stroke-linecap="round" />
+                <circle cx="87" cy="88" r="3.5" fill="#2b170c" />
+                <circle cx="113" cy="88" r="3.5" fill="#2b170c" />
+                <circle cx="88" cy="87" r="1" fill="#ffffff" />
+                <circle cx="114" cy="87" r="1" fill="#ffffff" />
+                <rect x="76" y="78" width="22" height="18" rx="4" fill="none" stroke="#e2e8f0" stroke-width="2.5" />
+                <rect x="102" y="78" width="22" height="18" rx="4" fill="none" stroke="#e2e8f0" stroke-width="2.5" />
+                <path d="M98 84 L102 84" stroke="#cbd5e1" stroke-width="2" />
+                <path d="M100 84 L97 103 L103 103 Z" fill="#e8bc99" />
+                <path d="M90 106 Q100 110 110 106 Q105 111 100 110 Q95 111 90 106 Z" fill="#201712" />
+                <path d="M88 113 Q100 124 112 113 C112 119 88 119 88 113 Z" fill="#ffffff" />
+                <path d="M89 113 Q100 122 111 113" stroke="#d97706" stroke-width="1.2" fill="none" />
+              </svg>
+            </div>
+          </div>
+          <div class="flex-1 text-center md:text-left flex flex-col items-center md:items-start w-full">
+            <div class="w-full max-w-2xl border-2 border-amber-400 px-6 py-5 bg-black">
+              <h1 class="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-widest uppercase text-center">
+                MASTER YOUR MIND
+              </h1>
+              <div class="flex items-center justify-center gap-4 my-2">
+                <div class="h-[2px] w-12 sm:w-20 bg-amber-400"></div>
+                <span class="text-amber-400 font-extrabold tracking-[0.3em] text-xs uppercase">TO</span>
+                <div class="h-[2px] w-12 sm:w-20 bg-amber-400"></div>
+              </div>
+              <h2 class="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-widest uppercase text-center">
+                MASTER YOUR LIFE
+              </h2>
+            </div>
+            <div class="mt-3 inline-flex items-center justify-center bg-amber-400 text-stone-950 font-extrabold px-6 py-1.5 rounded text-[11px] sm:text-xs uppercase tracking-wider">
+              KNOW YOUR MIND TO CONTROL YOUR MIND
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Welcome & Title Section -->
@@ -348,7 +400,7 @@ export function generateStandaloneHTML(webhookUrl: string): string {
 
   <script>
     // Configuration
-    const WEBHOOK_URL = "${webhookUrl || 'https://script.google.com/macros/s/AKfycbwTax-EfrmgPkkUDrQOm3xaV6skGjX--jiLLxnKVSmsi3IqdSjd0_ZtLXsAmK8Pp_E6/exec'}";
+    const WEBHOOK_URL = "${webhookUrl || 'https://script.google.com/macros/s/AKfycbwGCsAc3BXU3rwYLzJRxzwrr7boKSoMcZlnhIo3wRrwreVGsBqhoRm8ZSCk1vXH5x0/exec'}";
     const STORAGE_KEY = "monkhood_nlp_form_draft";
 
     const OCCUPATIONS = [

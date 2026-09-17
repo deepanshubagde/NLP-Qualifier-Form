@@ -24,7 +24,7 @@ import {
 const STORAGE_KEY = 'monkhood_nlp_form_draft_v1';
 const WEBHOOK_KEY = 'monkhood_webhook_url';
 export const DEFAULT_WEBHOOK_URL =
-  'https://script.google.com/macros/s/AKfycbwTax-EfrmgPkkUDrQOm3xaV6skGjX--jiLLxnKVSmsi3IqdSjd0_ZtLXsAmK8Pp_E6/exec';
+  'https://script.google.com/macros/s/AKfycbwGCsAc3BXU3rwYLzJRxzwrr7boKSoMcZlnhIo3wRrwreVGsBqhoRm8ZSCk1vXH5x0/exec';
 
 const INITIAL_FORM_DATA: FormData = {
   name: '',
@@ -89,30 +89,22 @@ export default function App() {
   const [submissionStatus, setSubmissionStatus] = useState<SubmissionStatus>('idle');
   const [submissionError, setSubmissionError] = useState<string | null>(null);
   const [submittedData, setSubmittedData] = useState<FormData | null>(null);
-  const [isSaving, setIsSaving] = useState(false);
-  const [lastSavedAt, setLastSavedAt] = useState<Date | null>(() => {
-    return localStorage.getItem(STORAGE_KEY) ? new Date() : null;
-  });
 
   const saveTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Auto-save debounced effect
+  // Auto-save debounced effect without unnecessary intermediate state renders
   useEffect(() => {
     if (submissionStatus === 'success') return;
 
-    setIsSaving(true);
     if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
 
     saveTimerRef.current = setTimeout(() => {
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
-        setIsSaving(false);
-        setLastSavedAt(new Date());
       } catch (err) {
         console.error('Failed to auto-save', err);
-        setIsSaving(false);
       }
-    }, 450);
+    }, 400);
 
     return () => {
       if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
@@ -253,10 +245,10 @@ export default function App() {
           console.warn('Background webhook dispatch:', err);
         });
 
-        // Fast transition: wait max 250ms so user has instantaneous confirmation
+        // Ensure network payload is dispatched to Google's servers
         await Promise.race([
           networkPromise,
-          new Promise((resolve) => setTimeout(resolve, 250)),
+          new Promise((resolve) => setTimeout(resolve, 1200)),
         ]);
       } else {
         await new Promise((resolve) => setTimeout(resolve, 150));
@@ -289,11 +281,6 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleSaveWebhook = (newUrl: string) => {
-    setWebhookUrl(newUrl);
-    localStorage.setItem(WEBHOOK_KEY, newUrl);
-  };
-
   return (
     <div className="min-h-screen bg-[#F6F5F2] text-stone-900 flex flex-col items-center selection:bg-amber-100 selection:text-amber-900">
       
@@ -306,7 +293,7 @@ export default function App() {
       <main className="w-full max-w-3xl px-2.5 sm:px-6 py-4 sm:py-10 flex-1">
         <div className="bg-white rounded-2xl sm:rounded-3xl shadow-[0_10px_35px_-5px_rgba(0,0,0,0.06),0_2px_10px_-2px_rgba(0,0,0,0.03)] border border-stone-200/90 overflow-hidden transition-all">
           
-          {/* Header Banner Image */}
+          {/* Header Banner */}
           <HeaderBanner />
 
           {/* Render Thank You View or Single-Page Form */}
@@ -351,7 +338,7 @@ export default function App() {
                         value={formData.name}
                         onChange={(e) => updateField('name', e.target.value)}
                         placeholder="Enter your full name"
-                        className={`w-full px-4 py-3 rounded-xl border bg-stone-50/50 text-stone-900 placeholder-stone-400 text-sm sm:text-base transition duration-150 ${
+                        className={`w-full px-4 py-3.5 sm:py-3 min-h-[48px] rounded-xl border bg-stone-50/50 text-stone-900 placeholder-stone-400 text-base transition-colors duration-100 touch-manipulation ${
                           errors.name
                             ? 'border-red-400 ring-2 ring-red-100 bg-red-50/10'
                             : 'border-stone-200 hover:border-stone-300 focus:border-amber-600 focus:bg-white focus:ring-3 focus:ring-amber-500/15'
@@ -365,7 +352,7 @@ export default function App() {
                       <label className="block text-sm sm:text-base font-semibold text-stone-900 mb-2">
                         Gender <span className="text-amber-600">*</span>
                       </label>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4">
                         {GENDER_OPTIONS.map((g) => {
                           const isSelected = formData.gender === g.value;
                           return (
@@ -374,18 +361,18 @@ export default function App() {
                               type="button"
                               id={`gender-opt-${g.value.toLowerCase().replace(/\s+/g, '-')}`}
                               onClick={() => updateField('gender', g.value as any)}
-                              className={`text-left p-3.5 sm:p-4 rounded-xl border transition-all duration-150 flex items-center justify-between gap-3 cursor-pointer select-none ${
+                              className={`text-left p-3.5 sm:p-4 min-h-[48px] rounded-xl border transition-colors duration-100 flex items-center justify-between gap-3 cursor-pointer select-none touch-manipulation active:scale-[0.98] ${
                                 isSelected
-                                  ? 'bg-amber-50/70 border-amber-500/90 ring-1 ring-amber-500/20 shadow-xs'
-                                  : 'bg-stone-50/40 border-stone-200/90 hover:bg-stone-50 hover:border-stone-300'
+                                  ? 'bg-amber-50/75 border-amber-500 ring-1 ring-amber-500/20 shadow-xs'
+                                  : 'bg-stone-50/40 border-stone-200/90 hover:bg-stone-50 hover:border-stone-300 active:bg-amber-50/30'
                               }`}
                             >
-                              <span className={`text-sm font-semibold ${isSelected ? 'text-amber-900' : 'text-stone-800'}`}>
+                              <span className={`text-sm sm:text-base font-semibold ${isSelected ? 'text-amber-900' : 'text-stone-800'}`}>
                                 {g.label}
                               </span>
 
                               <div
-                                className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 transition-colors ${
+                                className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 transition-colors duration-100 ${
                                   isSelected
                                     ? 'border-amber-600 bg-amber-600 text-white'
                                     : 'border-stone-300 bg-white'
@@ -414,7 +401,7 @@ export default function App() {
                           value={formData.age}
                           onChange={(e) => updateField('age', e.target.value)}
                           placeholder="e.g. 29"
-                          className={`w-full px-4 py-3 rounded-xl border bg-stone-50/50 text-stone-900 placeholder-stone-400 text-sm sm:text-base transition ${
+                          className={`w-full px-4 py-3.5 sm:py-3 min-h-[48px] rounded-xl border bg-stone-50/50 text-stone-900 placeholder-stone-400 text-base transition-colors duration-100 touch-manipulation ${
                             errors.age
                               ? 'border-red-400 ring-2 ring-red-100'
                               : 'border-stone-200 hover:border-stone-300 focus:border-amber-600 focus:bg-white'
@@ -433,7 +420,7 @@ export default function App() {
                           value={formData.city}
                           onChange={(e) => updateField('city', e.target.value)}
                           placeholder="e.g. Pune, Mumbai"
-                          className={`w-full px-4 py-3 rounded-xl border bg-stone-50/50 text-stone-900 placeholder-stone-400 text-sm sm:text-base transition ${
+                          className={`w-full px-4 py-3.5 sm:py-3 min-h-[48px] rounded-xl border bg-stone-50/50 text-stone-900 placeholder-stone-400 text-base transition-colors duration-100 touch-manipulation ${
                             errors.city
                               ? 'border-red-400 ring-2 ring-red-100'
                               : 'border-stone-200 hover:border-stone-300 focus:border-amber-600 focus:bg-white'
@@ -590,7 +577,7 @@ export default function App() {
                       id="submit-qualification-button"
                       type="submit"
                       disabled={submissionStatus === 'submitting'}
-                      className="relative overflow-hidden group w-full py-4.5 px-8 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 hover:from-amber-600 hover:via-amber-700 hover:to-amber-800 text-white font-bold text-base sm:text-lg border-t border-amber-300/40 shadow-xl shadow-amber-600/30 hover:shadow-2xl hover:shadow-amber-600/45 active:scale-[0.99] transition-all duration-200 flex items-center justify-center gap-2.5 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                      className="relative overflow-hidden group w-full min-h-[56px] py-4 px-8 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 hover:from-amber-600 hover:via-amber-700 hover:to-amber-800 text-white font-bold text-base sm:text-lg border-t border-amber-300/40 shadow-xl shadow-amber-600/30 hover:shadow-2xl hover:shadow-amber-600/45 active:scale-[0.98] transition-transform duration-100 flex items-center justify-center gap-2.5 cursor-pointer select-none touch-manipulation disabled:opacity-60 disabled:cursor-not-allowed"
                     >
                       {/* Top gloss reflection highlight */}
                       <span className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/25 to-transparent pointer-events-none rounded-t-2xl" />

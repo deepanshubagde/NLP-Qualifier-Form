@@ -42,7 +42,7 @@ export const ChoiceCards: React.FC<ChoiceCardsProps> = ({
         {description && <p className="text-xs text-stone-500 mt-1">{description}</p>}
       </div>
 
-      <div className={`grid gap-3.5 sm:gap-4 ${columns === 2 ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'}`}>
+      <div className={`grid gap-3 sm:gap-4 ${columns === 2 ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'}`}>
         {options.map((opt) => {
           const isSelected = value === opt.value;
           return (
@@ -51,15 +51,15 @@ export const ChoiceCards: React.FC<ChoiceCardsProps> = ({
               type="button"
               id={`${id}-opt-${opt.value.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`}
               onClick={() => onChange(opt.value)}
-              className={`text-left p-3.5 sm:p-4 rounded-xl border transition-all duration-150 flex items-start justify-between gap-3 cursor-pointer select-none ${
+              className={`text-left p-3.5 sm:p-4 min-h-[50px] rounded-xl border transition-colors duration-100 flex items-start justify-between gap-3 cursor-pointer select-none touch-manipulation active:scale-[0.985] ${
                 isSelected
-                  ? 'bg-amber-50/70 border-amber-500/90 ring-1 ring-amber-500/20 shadow-xs'
-                  : 'bg-stone-50/40 border-stone-200/90 hover:bg-stone-50 hover:border-stone-300'
+                  ? 'bg-amber-50/75 border-amber-500 ring-1 ring-amber-500/30 shadow-xs'
+                  : 'bg-stone-50/40 border-stone-200/90 hover:bg-stone-50 hover:border-stone-300 active:bg-amber-50/30'
               }`}
             >
               <div className="space-y-0.5 flex-1">
                 <div className="flex items-center gap-2">
-                  <span className={`text-sm font-semibold ${isSelected ? 'text-amber-900' : 'text-stone-800'}`}>
+                  <span className={`text-sm sm:text-base font-semibold ${isSelected ? 'text-amber-900' : 'text-stone-800'}`}>
                     {opt.label}
                   </span>
                   {opt.badge && (
@@ -74,7 +74,7 @@ export const ChoiceCards: React.FC<ChoiceCardsProps> = ({
               </div>
 
               <div
-                className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
+                className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 mt-0.5 transition-colors duration-100 ${
                   isSelected
                     ? 'border-amber-600 bg-amber-600 text-white'
                     : 'border-stone-300 bg-white'

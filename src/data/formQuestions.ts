@@ -5,30 +5,12 @@ export const GENDER_OPTIONS = [
 ];
 
 export const OCCUPATION_OPTIONS = [
-  {
-    label: 'Business / Entrepreneur',
-    value: 'Business / Entrepreneur',
-  },
-  {
-    label: 'Self-Employed / Freelancer',
-    value: 'Self-Employed / Freelancer',
-  },
-  {
-    label: 'Job / Working Professional',
-    value: 'Job',
-  },
-  {
-    label: 'Trainer / Speaker / Coach / Author',
-    value: 'Trainer / Speaker / Coach / Author',
-  },
-  {
-    label: 'Housewife / Homemaker',
-    value: 'Housewife',
-  },
-  {
-    label: 'Student',
-    value: 'Student',
-  },
+  { label: 'Business / Entrepreneur', value: 'Business / Entrepreneur' },
+  { label: 'Self-Employed / Freelancer', value: 'Self-Employed / Freelancer' },
+  { label: 'Job / Working Professional', value: 'Job' },
+  { label: 'Trainer / Speaker / Coach / Author', value: 'Trainer / Speaker / Coach / Author' },
+  { label: 'Housewife / Homemaker', value: 'Housewife' },
+  { label: 'Student', value: 'Student' },
 ];
 
 export const STRUGGLING_AREAS_OPTIONS = [
@@ -51,24 +33,10 @@ export const OBSTACLE_OPTIONS = [
 ];
 
 export const INVESTMENT_OPTIONS = [
-  {
-    label: 'A) ₹5,000 to ₹10,000',
-    value: 'A) 5k to 10k',
-  },
-  {
-    label: 'B) ₹15,000 to ₹25,000',
-    value: 'B) 15k to 25k',
-  },
-  {
-    label: 'C) ₹25,000 to ₹45,000',
-    value: 'C) 25k to 45k',
-  },
-  {
-    label: 'D) Ready To Invest Any Amount, If I Get A Result',
-    value: 'D) Ready To Invest Any Amount, If I Get A Result',
-  },
-  {
-    label: 'E) No, I cannot invest at this time',
-    value: "E) No I can't Invest",
-  },
+  { label: 'A) ₹5,000 to ₹10,000', value: 'A) 5k to 10k' },
+  { label: 'B) ₹15,000 to ₹25,000', value: 'B) 15k to 25k' },
+  { label: 'C) ₹25,000 to ₹45,000', value: 'C) 25k to 45k' },
+  { label: 'D) Ready To Invest Any Amount, If I Get A Result', value: 'D) Ready To Invest Any Amount, If I Get A Result' },
+  { label: 'E) No, I cannot invest at this time', value: "E) No I can't Invest" },
 ];
+

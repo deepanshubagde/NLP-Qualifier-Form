@@ -40,7 +40,7 @@ export const MultiSelectPills: React.FC<MultiSelectPillsProps> = ({
         {description && <p className="text-xs text-stone-500 mt-1">{description}</p>}
       </div>
 
-      <div className="flex flex-wrap gap-3 sm:gap-3.5">
+      <div className="flex flex-wrap gap-2.5 sm:gap-3.5">
         {options.map((opt) => {
           const isSelected = selectedValues.includes(opt.value);
           return (
@@ -49,14 +49,14 @@ export const MultiSelectPills: React.FC<MultiSelectPillsProps> = ({
               type="button"
               id={`${id}-tag-${opt.value.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`}
               onClick={() => toggleOption(opt.value)}
-              className={`inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl border text-sm font-medium transition-all duration-150 cursor-pointer select-none ${
+              className={`inline-flex items-center gap-2 min-h-[44px] px-3.5 sm:px-4 py-2.5 rounded-xl border text-sm sm:text-base font-medium transition-colors duration-100 cursor-pointer select-none touch-manipulation active:scale-[0.96] ${
                 isSelected
-                  ? 'bg-amber-600 text-white border-amber-600 shadow-xs shadow-amber-600/20'
-                  : 'bg-stone-50/70 border-stone-200 text-stone-700 hover:bg-stone-100 hover:border-stone-300'
+                  ? 'bg-amber-600 text-white border-amber-600 shadow-xs shadow-amber-600/20 ring-1 ring-amber-500/30'
+                  : 'bg-stone-50/70 border-stone-200 text-stone-700 hover:bg-stone-100 hover:border-stone-300 active:bg-amber-50'
               }`}
             >
-              <span className={`w-4 h-4 rounded-full flex items-center justify-center text-xs ${
-                isSelected ? 'bg-amber-700/50 text-white' : 'bg-stone-200/80 text-stone-600'
+              <span className={`w-4 h-4 rounded-full flex items-center justify-center text-xs transition-colors duration-100 ${
+                isSelected ? 'bg-amber-700/60 text-white' : 'bg-stone-200/80 text-stone-600'
               }`}>
                 {isSelected ? <Check className="w-3 h-3 stroke-[3]" /> : <Plus className="w-3 h-3" />}
               </span>

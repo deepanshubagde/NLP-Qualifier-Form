@@ -80,7 +80,7 @@ export const ThankYouView: React.FC<ThankYouViewProps> = ({
         <button
           type="button"
           onClick={onReset}
-          className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-white hover:bg-stone-50 text-stone-600 hover:text-stone-900 border border-stone-300 text-xs font-medium transition cursor-pointer shadow-xs"
+          className="inline-flex items-center justify-center gap-1.5 min-h-[44px] px-5 py-2.5 rounded-xl bg-white hover:bg-stone-50 active:bg-stone-100 text-stone-700 hover:text-stone-900 border border-stone-300 text-xs sm:text-sm font-semibold transition-colors duration-100 cursor-pointer select-none touch-manipulation active:scale-[0.97] shadow-xs"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Submit another response</span>

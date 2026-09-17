@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import { X, Copy, Check, ExternalLink, Code2, FileText, Send, Sparkles, AlertCircle } from 'lucide-react';
+import { X, Copy, Check, ExternalLink, Code2, FileText, Send, Sparkles, AlertCircle, Image as ImageIcon, Upload, RotateCcw } from 'lucide-react';
 import { GOOGLE_APPS_SCRIPT_CODE } from '../utils/googleAppsScript';
 import { generateStandaloneHTML } from '../utils/generateStandaloneCode';
+
+const DEFAULT_BANNER = '/assets/header-banner.png';
+const CUSTOM_BANNER_STORAGE_KEY = 'monkhood_custom_banner';
 
 interface WebhookModalProps {
   isOpen: boolean;
@@ -16,12 +19,20 @@ export const WebhookModal: React.FC<WebhookModalProps> = ({
   webhookUrl,
   onSaveWebhookUrl,
 }) => {
-  const [activeTab, setActiveTab] = useState<'setup' | 'script' | 'standalone'>('setup');
+  const [activeTab, setActiveTab] = useState<'setup' | 'script' | 'standalone' | 'banner'>('setup');
   const [urlInput, setUrlInput] = useState<string>(webhookUrl);
   const [copiedScript, setCopiedScript] = useState(false);
   const [copiedHTML, setCopiedHTML] = useState(false);
   const [testStatus, setTestStatus] = useState<'idle' | 'testing' | 'success' | 'failed'>('idle');
   const [testMessage, setTestMessage] = useState('');
+  const [bannerPreview, setBannerPreview] = useState<string>(() => {
+    try {
+      return localStorage.getItem(CUSTOM_BANNER_STORAGE_KEY) || DEFAULT_BANNER;
+    } catch {
+      return DEFAULT_BANNER;
+    }
+  });
+  const [bannerSuccessMsg, setBannerSuccessMsg] = useState(false);
 
   if (!isOpen) return null;
 
@@ -153,6 +164,18 @@ export const WebhookModal: React.FC<WebhookModalProps> = ({
           >
             3. Standalone HTML Export
           </button>
+          <button
+            type="button"
+            onClick={() => setActiveTab('banner')}
+            className={`py-3 px-3 border-b-2 transition flex items-center gap-1.5 ${
+              activeTab === 'banner'
+                ? 'border-amber-600 text-amber-800'
+                : 'border-transparent text-stone-500 hover:text-stone-800'
+            }`}
+          >
+            <ImageIcon className="w-3.5 h-3.5 text-amber-600" />
+            <span>4. Header Photo</span>
+          </button>
         </div>
 
         {/* Modal Body */}
@@ -279,6 +302,108 @@ export const WebhookModal: React.FC<WebhookModalProps> = ({
                   <span>Download index.html</span>
                 </button>
               </div>
+            </div>
+          )}
+
+          {activeTab === 'banner' && (
+            <div className="space-y-4">
+              <div className="bg-amber-50/70 border border-amber-200/80 rounded-xl p-4 text-xs text-amber-950 space-y-1.5">
+                <p className="font-bold flex items-center gap-1.5 text-amber-900">
+                  <ImageIcon className="w-4 h-4 text-amber-600" />
+                  Custom Header Photo / SRM Banner
+                </p>
+                <p className="leading-relaxed text-stone-700">
+                  Select or drag-and-drop your new <strong>Header img SRM Form.png</strong> file. It will immediately replace the header graphic across the form and persist in your browser.
+                </p>
+              </div>
+
+              {/* Current Preview */}
+              <div className="space-y-2">
+                <label className="block text-xs font-bold uppercase tracking-wider text-stone-600">
+                  Active Banner Preview
+                </label>
+                <div className="rounded-xl overflow-hidden border border-stone-300 shadow-sm bg-black relative">
+                  <img
+                    src={bannerPreview}
+                    alt="Active Header Banner Preview"
+                    className="w-full h-auto block select-none"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              </div>
+
+              {/* File Upload / Drag Zone */}
+              <div className="space-y-2">
+                <label className="block text-xs font-bold uppercase tracking-wider text-stone-600">
+                  Upload New Header Image
+                </label>
+                <div className="border-2 border-dashed border-stone-300 hover:border-amber-500 rounded-xl p-6 text-center bg-stone-50 hover:bg-amber-50/40 transition flex flex-col items-center justify-center gap-2">
+                  <Upload className="w-8 h-8 text-amber-600" />
+                  <p className="text-xs font-semibold text-stone-800">
+                    Click to select <code>Header img SRM Form.png</code> or drag & drop here
+                  </p>
+                  <p className="text-2xs text-stone-500">
+                    Supports PNG, JPG, WEBP • Recommended aspect ratio: 4:1 to 5:1 wide banner
+                  </p>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    id="modal-banner-file-input"
+                    className="mt-2 text-xs text-stone-600 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-amber-600 file:text-white hover:file:bg-amber-700 cursor-pointer"
+                    onChange={(e) => {
+                      const file = e.target.files?.[0];
+                      if (file) {
+                        const reader = new FileReader();
+                        reader.onload = (evt) => {
+                          const result = evt.target?.result as string;
+                          if (result) {
+                            try {
+                              localStorage.setItem(CUSTOM_BANNER_STORAGE_KEY, result);
+                            } catch {
+                              console.warn('LocalStorage limit reached');
+                            }
+                            setBannerPreview(result);
+                            setBannerSuccessMsg(true);
+                            setTimeout(() => setBannerSuccessMsg(false), 3000);
+                            // Also trigger custom event so App/Banner updates live
+                            window.dispatchEvent(new Event('storage'));
+                          }
+                        };
+                        reader.readAsDataURL(file);
+                      }
+                    }}
+                  />
+                </div>
+              </div>
+
+              {bannerSuccessMsg && (
+                <div className="flex items-center gap-2 p-3 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold">
+                  <Check className="w-4 h-4 text-emerald-600" />
+                  <span>Header photo updated successfully!</span>
+                </div>
+              )}
+
+              {/* Reset Option */}
+              {bannerPreview !== DEFAULT_BANNER && (
+                <div className="pt-2 flex justify-end">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      try {
+                        localStorage.removeItem(CUSTOM_BANNER_STORAGE_KEY);
+                      } catch {
+                        // ignore
+                      }
+                      setBannerPreview(DEFAULT_BANNER);
+                      window.dispatchEvent(new Event('storage'));
+                    }}
+                    className="inline-flex items-center gap-1.5 text-xs text-stone-600 hover:text-stone-900 underline font-medium"
+                  >
+                    <RotateCcw className="w-3.5 h-3.5" />
+                    <span>Reset to original default banner</span>
+                  </button>
+                </div>
+              )}
             </div>
           )}
         </div>
