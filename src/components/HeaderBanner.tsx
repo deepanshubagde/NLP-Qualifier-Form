@@ -42,7 +42,7 @@ export const HeaderBanner: React.FC<HeaderBannerProps> = ({
       <img
         id="header-banner-img"
         src={currentUrl}
-        alt="Master Your Mind To Master Your Life - Deepanshu Bagde"
+        alt="Master Your Mind To Master Your Life - Rahul"
         referrerPolicy="no-referrer"
         className="w-full h-auto block select-none pointer-events-none"
       />

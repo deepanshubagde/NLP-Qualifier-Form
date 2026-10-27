@@ -18,11 +18,11 @@ function doPost(e) {
     data.q1,  // Which of the Following Describes you the Best
     data.q2,  // Which of the Following Areas you are Struggling
     data.q3,  // Experiencing patterns of failure... (Yes/No)
-    data.q4,  // Attended Deepanshu Sir’s Event earlier? (Yes/No)
+    data.q4,  // Attended Rahul Sir’s Event earlier? (Yes/No)
     data.q5,  // Feel brain fog... (Yes/No)
     data.q6,  // Know you have more in you... (Yes/No)
-    data.q7,  // Heard of NLP? (Yes/No)
-    data.q8,  // Attended the NLP workshop earlier? (Yes/No)
+    data.q7,  // Heard of Mind Reprogramming? (Yes/No)
+    data.q8,  // Attended the Mind Reprogramming workshop earlier? (Yes/No)
     data.q9,  // Major obstacle stopping you...
     data.q10  // Willing to invest...
   ];

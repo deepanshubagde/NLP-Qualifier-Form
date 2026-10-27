@@ -1,8 +1,8 @@
 /**
- * Google Apps Script Webhook Handler for Monkhood NLP Coaching Form
+ * Google Apps Script Webhook Handler for Monkhood Mind Reprogramming Coaching Form
  * 
  * Instructions to set up:
- * 1. Open your Google Sheet (e.g., "NLP Advanced Coaching Qualifications")
+ * 1. Open your Google Sheet (e.g., "Mind Reprogramming Advanced Coaching Qualifications")
  * 2. Click "Extensions" > "Apps Script" in the top menu
  * 3. Replace any existing code with this script
  * 4. Click "Deploy" (top right) > "New deployment"
@@ -37,11 +37,11 @@ function doPost(e) {
         "Current Profession / Profile",
         "Struggling Areas",
         "Pattern of Failure / Frustration",
-        "Attended Deepanshu Sir's Event Earlier",
+        "Attended Rahul Sir's Event Earlier",
         "Brain Fog / Lack of Energy & Purpose",
         "Capable of More But Stuck",
-        "Heard of NLP",
-        "Attended NLP Workshop Earlier",
+        "Heard of Mind Reprogramming",
+        "Attended Mind Reprogramming Workshop Earlier",
         "Major Obstacle",
         "Investment Willingness",
         "Personal Note / Goal"

@@ -16,7 +16,7 @@ export interface FormData {
   // Q3: Working hard yet experiencing failure patterns
   patternsOfFailure: 'Yes' | 'No' | '';
 
-  // Q4: Attended Deepanshu Sir's Event earlier
+  // Q4: Attended Rahul Sir's Event earlier
   attendedDeepanshuEvent: 'Yes' | 'No' | '';
 
   // Q5: Brain fog, tired, lack of motivation/energy
@@ -25,10 +25,10 @@ export interface FormData {
   // Q6: Know you have more in you but stopped
   capableMoreNotHappening: 'Yes' | 'No' | '';
 
-  // Q7: Heard of NLP
+  // Q7: Heard of Mind Reprogramming
   heardOfNLP: 'Yes' | 'No' | '';
 
-  // Q8: Attended NLP workshop earlier
+  // Q8: Attended Mind Reprogramming workshop earlier
   attendedNLPWorkshop: 'Yes' | 'No' | '';
 
   // Q9: Major obstacle

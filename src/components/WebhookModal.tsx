@@ -237,7 +237,7 @@ export const WebhookModal: React.FC<WebhookModalProps> = ({
               <div className="bg-stone-50 rounded-xl p-4 border border-stone-200/80 space-y-2.5 text-xs text-stone-600">
                 <p className="font-bold text-stone-800 uppercase tracking-wider text-[11px]">2-Minute Quick Setup Checklist:</p>
                 <ol className="list-decimal pl-4 space-y-1.5 leading-relaxed">
-                  <li>Open your Google Sheet (e.g. "NLP Coaching Leads").</li>
+                  <li>Open your Google Sheet (e.g. "Mind Reprogramming Coaching Leads").</li>
                   <li>Click <strong>Extensions &gt; Apps Script</strong>.</li>
                   <li>Copy the code from Tab 2 and paste it into the editor.</li>
                   <li>Click <strong>Deploy &gt; New Deployment</strong>, choose <strong>Web App</strong>.</li>

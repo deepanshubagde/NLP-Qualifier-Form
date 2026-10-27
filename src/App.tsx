@@ -7,7 +7,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Send, Sparkles, Check, AlertCircle, HeartHandshake, Eye, ShieldCheck } from 'lucide-react';
 import { FormData, FormErrors, SubmissionStatus } from './types';
-import { HeaderBanner } from './components/HeaderBanner';
 import { TopStatusBar } from './components/TopStatusBar';
 import { ChoiceCards } from './components/ChoiceCards';
 import { YesNoToggle } from './components/YesNoToggle';
@@ -65,7 +64,7 @@ const DUMMY_SUBMISSION_DATA: FormData = {
   majorObstacle: 'Lack of Strategy & Plan',
   majorObstacleOther: '',
   investmentCapacity: 'D) Ready To Invest Any Amount, If I Get A Result',
-  personalNotes: 'Looking forward to transforming my business and mental clarity with Deepanshu Sir.',
+  personalNotes: 'Looking forward to transforming my business and mental clarity with Rahul Sir.',
 };
 
 export default function App() {
@@ -292,10 +291,6 @@ export default function App() {
       {/* Main Single-Page Form Canvas */}
       <main className="w-full max-w-3xl px-2.5 sm:px-6 py-4 sm:py-10 flex-1">
         <div className="bg-white rounded-2xl sm:rounded-3xl shadow-[0_10px_35px_-5px_rgba(0,0,0,0.06),0_2px_10px_-2px_rgba(0,0,0,0.03)] border border-stone-200/90 overflow-hidden transition-all">
-          
-          {/* Header Banner */}
-          <HeaderBanner />
-
           {/* Render Thank You View or Single-Page Form */}
           <AnimatePresence mode="wait">
             {submissionStatus === 'success' && submittedData ? (
@@ -475,7 +470,7 @@ export default function App() {
                     <YesNoToggle
                       id="attendedDeepanshuEvent"
                       questionNumber={4}
-                      questionText="Have you attended Deepanshu Sir’s Event earlier?"
+                      questionText="Have you attended Rahul Sir’s Event earlier?"
                       value={formData.attendedDeepanshuEvent}
                       onChange={(val) => updateField('attendedDeepanshuEvent', val)}
                       error={errors.attendedDeepanshuEvent}
@@ -511,7 +506,7 @@ export default function App() {
                       <YesNoToggle
                         id="heardOfNLP"
                         questionNumber={7}
-                        questionText="Have you ever heard of NLP?"
+                        questionText="Have you ever heard of Mind Reprogramming?"
                         value={formData.heardOfNLP}
                         onChange={(val) => updateField('heardOfNLP', val)}
                         error={errors.heardOfNLP}
@@ -521,7 +516,7 @@ export default function App() {
                       <YesNoToggle
                         id="attendedNLPWorkshop"
                         questionNumber={8}
-                        questionText="Have you ever attended an NLP workshop earlier?"
+                        questionText="Have you ever attended a Mind Reprogramming workshop earlier?"
                         value={formData.attendedNLPWorkshop}
                         onChange={(val) => updateField('attendedNLPWorkshop', val)}
                         error={errors.attendedNLPWorkshop}
